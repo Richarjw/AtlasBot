@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask, request
+from flask import Flask,flash, request
 from flask import render_template
 import atlas
 
@@ -13,6 +13,7 @@ def home():
 @app.route("/respond", methods=['POST'])
 def respond():
     bot.speakResponse(request.form['input'])
+    flash('HEY!')
     return app.send_static_file('index.html')
 
 if __name__ == '__main__':
