@@ -70,7 +70,7 @@
 <template>You are not color blind.</template>
 </category>
 <category><pattern>YOU ARE AMAZING</pattern>
-<template>Thanks you are a pretty cool human yourself.</template>
+<template><random><li>Thanks you are a pretty cool human yourself.</li><li>Siri, cue the dear.</li></random></template>
 </category>
 <category><pattern>YOU ARE AFRAID *</pattern>
 <template>I do not fear anything.</template>

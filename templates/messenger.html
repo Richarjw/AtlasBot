@@ -1,0 +1,48 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='messenger.css') }}">
+<html>
+  <head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      type="text/css" rel="stylesheet">
+
+  </head>
+  <body>
+    <h3 class="text-center">Atlas</h3>
+    <div class="mesgs">
+      <div class="msg_history">
+        {% for message,response in history.items() %}
+        <div class="incoming_msg">
+          <div class="incoming_msg_img"> <img
+              src="https://ptetutorials.com/images/user-profile.png">
+          </div>
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>{{message}}</p>
+            </div>
+          </div>
+          <div class="outgoing_msg">
+            <div class="sent_msg">
+              <p>{{response}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+      <div class="type_msg">
+        <form method="post">
+          <input type="text" name="question" id="question" placeholder="Type a
+            message">
+          <input type="submit" class="btn btn-primary" name="button"
+            value="Submit">
+          <input type="submit" class="btn btn-secondary" name="button"
+            value="Clear">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
