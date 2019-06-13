@@ -1,0 +1,128 @@
+<head>
+
+    <script>
+    (function (e, p) {
+      var m = location.href.match(/platform=(win8|win|mac|linux|cros)/);
+      e.id = (m && m[1]) ||
+        (p.indexOf('Windows NT 6.2') > -1 ? 'win8' : p.indexOf('Windows') > -1 ? 'win' : p.indexOf('Mac') > -1 ? 'mac' : p.indexOf('CrOS') > -1 ? 'cros' : 'linux');
+      e.className = e.className.replace(/\bno-js\b/, 'js');
+    })(document.documentElement, window.navigator.userAgent)
+  </script>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width"
+        name="viewport">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin"
+        rel="stylesheet">
+    <link
+        href="https://google.com/intl/en/chrome/assets/common/css/chrome.min.css"
+        rel="stylesheet">
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+      #info {
+        font-size: 20px;
+      }
+      
+      #div_start {
+        float: right;
+      }
+      
+      #headline {
+        text-decoration: none
+      }
+      
+      #results {
+        display: none;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: left;
+        min-height: 150px;
+      }
+      
+      #start_button {
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+      }
+      
+      #div_language {
+        display: none;
+      }
+      
+      .interim {
+        color: gray;
+      }
+      
+      .final {
+        color: black;
+        padding-right: 3px;
+      }
+      
+      .button {
+        display: none;
+      }
+      
+      .marquee {
+        margin: 20px auto;
+      }
+      
+      #buttons {
+        margin: 10px 0;
+        position: relative;
+        top: -50px;
+      }
+      
+      #copy {
+        margin-top: 20px;
+      }
+      
+      #copy>div {
+        display: none;
+        margin: 0 70px;
+      }
+      
+      a.c1 {
+        font-weight: normal;
+      }
+    </style>
+</head>
+<title>
+    Hey Atlas!
+</title>
+<body class="" id="grid">
+    <div class="browser-landing" id="main">
+        <div class="compact marquee-stacked" id="marquee">
+            <div class="marquee-copy">
+                <div id="info">
+                </div>
+                <h1>
+                    Hey Atlas!
+                </h1>
+            </div>
+        </div>
+        <div class="compact marquee">
+            <center><button id="start_button" onclick="startButton(event)"><img
+                        alt="Start" id="start_img"
+                        src="http://google.com/intl/en/chrome/assets/common/images/content/mic.gif"></button></center>
+            <div id="div_start">
+            </div>
+            <div id="results">
+                <span class="final" id="final_span"></span> <span
+                    class="interim"
+                    id="interim_span"></span>
+            </div>
+
+            <div class="compact marquee" id="div_language">
+                <select id="select_language" onchange="updateCountry()">
+                </select>&nbsp;&nbsp; <select id="select_dialect">
+                </select>
+            </div>
+        </div>
+    </div>
+    <script
+        src="http://google.com/intl/en/chrome/assets/common/js/chrome.min.js">
+  </script>
