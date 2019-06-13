@@ -1,6 +1,6 @@
-aichat
-=======
 ATLAS
+=======
+ATLAS - Jack Richard's personal assistant
 
 Instructions for Reinforcement Learning Graders:
 
